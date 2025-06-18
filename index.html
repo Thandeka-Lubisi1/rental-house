@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DreamRentals - Find Your Place</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>🏡 DreamRentals</h1>
+    <nav id="main-nav" style="display: none;">
+      <ul>
+        <li><a href="#" onclick="showDashboard()">Dashboard</a></li>
+        <li><a href="#" onclick="logout()">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Welcome Section -->
+    <section id="welcome">
+      <h2>Welcome to DreamRentals</h2>
+      <p>Find your perfect room, flat, or home to rent!</p>
+      <div class="auth-buttons">
+        <button type="button" onclick="showLogin()">Login</button>
+        <button type="button" onclick="showSignup()">Signup</button>
+      </div>
+    </section>
+
+    <!-- Login Form -->
+    <section id="login-section" style="display: none;">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label>Are you a:</label>
+        <select id="loginRole">
+          <option value="tenant">Tenant</option>
+          <option value="landlord">Landlord</option>
+        </select>
+        <input type="text" id="loginUsername" placeholder="Username" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <button type="submit">Login</button>
+        <p onclick="showSignup()" class="link">Don’t have an account? Signup here.</p>
+      </form>
+    </section>
+
+    <!-- Signup Form -->
+    <section id="signup-section" style="display: none;">
+      <h2>Signup</h2>
+      <form id="signupForm">
+        <label>Register as:</label>
+        <select id="signupRole">
+          <option value="tenant">Tenant</option>
+          <option value="landlord">Landlord</option>
+        </select>
+        <input type="text" id="signupUsername" placeholder="Username" required>
+        <input type="password" id="signupPassword" placeholder="Password (8+ chars with symbol)" required>
+        <button type="submit">Signup</button>
+        <p onclick="showLogin()" class="link">Already have an account? Login here.</p>
+      </form>
+    </section>
+
+    <!-- Landlord Dashboard -->
+    <section id="landlord-dashboard" style="display: none;">
+      <h2>Post a Rental Listing</h2>
+      <form id="listingForm">
+        <input type="text" id="propertyTitle" placeholder="Listing Title" required>
+        <textarea id="propertyLocation" placeholder="Enter location" required></textarea>
+        <input type="text" id="propertyContact" placeholder="Contact info (email/number)" required>
+        <input type="file" id="propertyImages" accept="image/*" multiple required>
+        <button type="submit">Add Listing</button>
+      </form>
+    </section>
+
+    <!-- Tenant View of Listings -->
+    <section id="listings-section" style="display: none;">
+      <h2>Available Listings</h2>
+      <div id="listingContainer"></div>
+    </section>
+
+    <!-- Feature Suggestions -->
+    <section id="suggestions">
+      <h3>Want to enhance this website?</h3>
+      <ul>
+        <li>Add more listings?</li>
+        <li>Enhance the login/signup features?</li>
+        <li>Improve mobile responsiveness?</li>
+        <li>Add a navigation bar or dashboard?</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 DreamRentals | Beautiful homes, beautifully presented.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
